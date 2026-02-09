@@ -42,7 +42,7 @@ export function RiskMap({ lat, lon, onLocationSelect }: RiskMapProps) {
     }
 
     // Fix default marker icon
-    delete (leaflet.Icon.Default.prototype as Record<string, unknown>)._getIconUrl
+    delete (leaflet.Icon.Default.prototype as any)._getIconUrl
     leaflet.Icon.Default.mergeOptions({
       iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
       iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
